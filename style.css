@@ -1,35 +1,76 @@
 body {
+    --bgColor: #f4f4f4;
+    --textColor: #333;
+    --bgContainer: #fff;
+    --contactColor: #666;
+    --titleColor: #444;
+    --subTitleColor: #333;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --borderColor: #ddd;
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: var(--bgColor);
+    color: var(--textColor);
+}
+
+body.dark {
+    --bgColor: #222;
+    --textColor: #fff;
+    --bgContainer: #333;
+    --contactColor: #bbb;
+    --titleColor: #ddd;
+    --subTitleColor: #eee;
+    --shadow: rgba(255, 255, 255, 0.1);
+    --borderColor: #555;
+}
+
+.cv-data {
+    position: fixed;
+    width: 200px;
+    margin: 0 20px 20px;
+    padding: 20px;
+    background: var(--bgContainer);
+    border-radius: 20px;
+    box-shadow: 0 2px 4px var(--shadow);
 }
 
 .cv-container {
-    max-width: 800px;
-    margin: 20px auto;
+    max-width: calc(100% - 200px - 140px);
+    margin: 20px 20px 20px auto;
     padding: 20px;
-    background: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: var(--bgContainer);
+    border-radius: 20px;
+    box-shadow: 0 2px 4px var(--shadow);
 }
 
 .cv-header {
     text-align: center;
-    border-bottom: 2px solid #333;
-    margin-bottom: 20px;
+    /*border-bottom: 2px solid #333;
+    padding-bottom: 20px;*/
 }
 
 .cv-header h1 {
     margin: 0;
     font-size: 2em;
-    color: #444;
+    color: var(--titleColor);
 }
 
 .contact-info {
+    text-align: left;
     font-size: 0.9em;
-    color: #666;
+    color: var(--contactColor);
+}
+
+.profile-image {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 4px var(--shadow);
 }
 
 .cv-section {
@@ -39,29 +80,35 @@ body {
 .cv-section h2 {
     font-size: 1.5em;
     margin-bottom: 10px;
-    color: #444;
-    border-bottom: 1px solid #ddd;
+    color: var(--titleColor);
+    border-bottom: 1px solid var(--borderColor);
     padding-bottom: 5px;
 }
 
-.job, .education {
+.cv-section:first-of-type h2 {
+    margin-top: 0;
+}
+
+.job,
+.education {
     margin-bottom: 15px;
 }
 
-.job h3, .education h3 {
+.job h3,
+.education h3 {
     margin: 0;
     font-size: 1.2em;
-    color: #333;
+    color: var(--subTitleColor);
 }
 
 ul {
     padding-left: 20px;
 }
 
-ul.skills-list, ul.languages-list {
+ul.skills-list {
     list-style-type: square;
 }
 
-.skills-list li, .languages-list li {
+.skills-list li {
     margin-bottom: 5px;
 }
