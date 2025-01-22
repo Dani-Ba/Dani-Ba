@@ -89,9 +89,34 @@ body.dark {
     margin-top: 0;
 }
 
+.cv-fcont {
+    display: flex;
+    gap: 20px;
+}
+
 .job,
 .education {
+    display: block;
+    background: var(--bgColor);
+    padding: 20px;
     margin-bottom: 15px;
+    width: 30%;
+    text-align: center;
+    color: var(--textColor);
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 2px 4px var(--shadow);
+    transition: box-shadow .2s ease-in-out, transform .2s ease-in-out;
+}
+
+a.job:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 8px var(--shadow);
+}
+
+.job img {
+    border-radius: 6px;
+    width: 150px;
 }
 
 .job h3,
@@ -111,4 +136,34 @@ ul.skills-list {
 
 .skills-list li {
     margin-bottom: 5px;
+}
+
+button {
+    cursor: pointer;
+    border: 0;
+    padding: 8px 12px;
+    border-radius: 20px;
+    color: var(--textColor);
+    background: var(--bgColor);
+}
+
+table {
+    width: 100%;
+    background: var(--bgColor);
+    border-collapse: collapse;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 8px;
+}
+
+td {
+    border-top: 2px solid var(--borderColor);
+}
+
+td:not(:last-of-type) {
+    border-right: 2px solid var(--borderColor);
 }

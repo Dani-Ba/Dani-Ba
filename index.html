@@ -33,33 +33,24 @@
 
         <section class="cv-section">
             <h2>Experiencia Laboral</h2>
-            <div class="job">
-                <h3>Posición Laboral</h3>
-                <p><strong>Empresa</strong> | Fecha Inicio - Fecha Fin</p>
-                <ul>
-                    <li>Responsabilidad o logro 1.</li>
-                    <li>Responsabilidad o logro 2.</li>
-                </ul>
-            </div>
-            <div class="job">
-                <h3>Otra Posición Laboral</h3>
-                <p><strong>Otra Empresa</strong> | Fecha Inicio - Fecha Fin</p>
-                <ul>
-                    <li>Responsabilidad o logro 1.</li>
-                    <li>Responsabilidad o logro 2.</li>
-                </ul>
-            </div>
+            <a class="job" href="https://grupoworldmobile.com">
+                <img src="https://grupoworldmobile.com/wp-content/uploads/2021/06/favicon-300x300.jpg"
+                    alt="World Mobile">
+                <p>World Mobile</p>
+            </a>
         </section>
 
         <section class="cv-section">
             <h2>Educación</h2>
-            <div class="education">
-                <h3>ESO</h3>
-                <p><strong>IES Blas Infante</strong> | 17/09/2018 – 22/06/2022</p>
-            </div>
-            <div class="education">
-                <h3>Sistemas Microinformáticos y Redes</h3>
-                <p><strong>IES Zaidín-Vergeles</strong> | 15/09/2022 - 21/06/2024</p>
+            <div class="cv-fcont">
+                <div class="education">
+                    <h3>ESO</h3>
+                    <p><strong>IES Blas Infante</strong> | 17/09/2018 – 22/06/2022</p>
+                </div>
+                <div class="education">
+                    <h3>Sistemas Microinformáticos y Redes</h3>
+                    <p><strong>IES Zaidín-Vergeles</strong> | 15/09/2022 - 21/06/2024</p>
+                </div>
             </div>
         </section>
 
@@ -75,17 +66,39 @@
 
         <section class="cv-section">
             <h2>Idiomas</h2>
-            <li>Idioma 1 - Nivel</li>
-            <li>Idioma 2 - Nivel</li>
+            <strong>Natal:</strong> Español (España)
+            <table>
+                <tr>
+                    <th colspan="4">Inglés</th>
+                </tr>
+                <tr>
+                    <td>Comprensión auditiva</td>
+                    <td>Expresión oral</td>
+                    <td>Comprensión lectora</td>
+                    <td>Expresión escrita</td>
+                </tr>
+                <tr class="center">
+                    <td>B1</td>
+                    <td>B1</td>
+                    <td>B1</td>
+                    <td>B1</td>
+                </tr>
+            </table>
         </section>
     </div>
     <script>
+        if (localStorage.getItem('dark')) {
+            changeTheme()
+        }
+
         function changeTheme() {
             if (!document.body.classList.contains('dark')) {
                 document.body.classList.add('dark')
+                localStorage.setItem('dark', 'true')
                 document.getElementById('themeButton').innerText = 'Desactivar modo oscuro'
             } else {
                 document.body.classList.remove('dark')
+                localStorage.removeItem('dark')
                 document.getElementById('themeButton').innerText = 'Activar modo oscuro'
             }
         }
